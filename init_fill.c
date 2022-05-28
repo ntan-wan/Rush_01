@@ -2,7 +2,7 @@
 
 char	*ft_strcpy(char *dest, char *src);
 
-void	init_fill(char *board[4][4][5], int row_size, int col_size)
+void	init_fill(char board[4][4][5], int row_size, int col_size)
 {
 	int		row_i;
 	int		col_i;
