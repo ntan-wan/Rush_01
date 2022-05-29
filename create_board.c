@@ -6,13 +6,13 @@
 /*   By: ntan-wan <ntan-wan@42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 16:12:04 by ntan-wan          #+#    #+#             */
-/*   Updated: 2022/05/29 16:14:28 by ntan-wan         ###   ########.fr       */
+/*   Updated: 2022/05/29 16:51:35 by ntan-wan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	create_board(char **av, int ***board, int nrows, int ncols)
+int	create_board(char **av, char ***board, int nrows, int ncols)
 {
 	int	i;
 	int	row;
@@ -31,7 +31,7 @@ int	create_board(char **av, int ***board, int nrows, int ncols)
 		col = 0;
 		while (col < ncols)
 		{
-			(*board)[row][col] = 0;
+			(*board)[row][col] = '0';
 			col++;
 		}
 		row++;
