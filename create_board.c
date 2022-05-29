@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 
 int malloc2d(char **av, int *** board, int nrows, int ncols,)
