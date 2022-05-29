@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_fill.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/29 11:09:52 by zwong             #+#    #+#             */
+/*   Updated: 2022/05/29 11:09:53 by zwong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 char	*ft_strcpy(char *dest, char *src);
@@ -11,7 +23,7 @@ void	init_fill(char board[4][4][5], int size)
 	row_i = 0;
 	col_i = 0;
 	index = 0;
-	while (index < size*size)
+	while (index < size * size)
 	{
 		row_i = index / size;
 		col_i = index % size;
