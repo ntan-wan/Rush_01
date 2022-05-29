@@ -6,9 +6,10 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 14:51:40 by zwong             #+#    #+#             */
-/*   Updated: 2022/05/29 17:18:12 by zwong            ###   ########.fr       */
+/*   Updated: 2022/05/29 18:28:03 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
 int	input_validation(int argc, char **argv, char *input_array)
 {
@@ -26,6 +27,7 @@ int	input_validation(int argc, char **argv, char *input_array)
 		if (input_char >= '0' && input_char <= '9')
 		{
 			input_array[input_count] = input_char;
+			printf("Count is: %d\n", input_count);
 			input_count++;
 		}
 		else if (input_char != ' ')
@@ -34,5 +36,6 @@ int	input_validation(int argc, char **argv, char *input_array)
 		}
 		counter++;
 	}
-	return (input_count != 16);
+	input_array[input_count] = '\0';
+	return (input_count == 16);
 }
