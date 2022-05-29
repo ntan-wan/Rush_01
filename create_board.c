@@ -27,25 +27,3 @@ int malloc2d(char **av, int *** board, int nrows, int ncols,)
 	}
     return 0;
 }
-
-int main(int argc, char ** argv)
-{
-    int ** grid;
-	int index_row;
-	int	index_col;
-
-    malloc2d(&grid, 4, 4);
-	index_row = 0;
-	while ( index_row < 4)
-	{	
-		index_col = 0;
-		while (index_col < 4)
-		{
-			printf("%d ", grid[index_row][index_col]);
-			index_col++;
-		}
-		printf("\n");
-		index_row++;
-	}
-    return 0;
-}
