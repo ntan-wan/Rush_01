@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_fill.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/29 11:09:52 by zwong             #+#    #+#             */
-/*   Updated: 2022/05/29 15:28:06 by zwong            ###   ########.fr       */
+/*   Created: 2022/05/24 10:28:50 by zwong             #+#    #+#             */
+/*   Updated: 2022/05/24 18:56:12 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src);
-
-void	init_fill(char board[4][4][5], int size)
+void	ft_putstr(char *str)
 {
-	int		row_i;
-	int		col_i;
-	int		index;
+	int	length;
 
-	row_i = 0;
-	col_i = 0;
-	index = 0;
-	while (index < size * size)
+	length = 0;
+	while (str[length] != '\0')
 	{
-		row_i = index / size;
-		col_i = index % size;
-		ft_strcpy(board[row_i][col_i], "1234");
-		index++;
+		length++;
 	}
+	write(1, str, length);
 }

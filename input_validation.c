@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_fill.c                                        :+:      :+:    :+:   */
+/*   input_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/29 11:09:52 by zwong             #+#    #+#             */
-/*   Updated: 2022/05/29 15:28:06 by zwong            ###   ########.fr       */
+/*   Created: 2022/05/29 14:51:40 by zwong             #+#    #+#             */
+/*   Updated: 2022/05/29 14:51:41 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char	*ft_strcpy(char *dest, char *src);
-
-void	init_fill(char board[4][4][5], int size)
+int	input_validation(int argc, char **argv)
 {
-	int		row_i;
-	int		col_i;
-	int		index;
+	int		counter;
+	int		input_count;
+	char	input_char;
 
-	row_i = 0;
-	col_i = 0;
-	index = 0;
-	while (index < size * size)
+	counter = 0;
+	input_count = 0;
+	if (argc != 2)
+		return (0);
+	while (argv[1][counter] != '\0')
 	{
-		row_i = index / size;
-		col_i = index % size;
-		ft_strcpy(board[row_i][col_i], "1234");
-		index++;
+		input_char = argv[1][counter];
+		if (input_char >= '0' && input_char <= '9')
+		{
+			input_count++;
+		}
+		else if (input_char != ' ')
+		{
+			return (0);
+		}
+		counter++;
 	}
+	return (input_count == 16);
 }

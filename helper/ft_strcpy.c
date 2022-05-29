@@ -1,16 +1,14 @@
 char	*ft_strcpy(char *dest, char *src)
 {
-	int	index;
+	char	*init;
 
-	index = 0;
-	while (*src)
+	init = dest;
+	while (*src != '\0')
 	{
 		*dest = *src;
 		dest++;
 		src++;
-		index++;
 	}
 	*dest = *src;
-	dest -= index - 1;
-	return (dest);
+	return (init);
 }
