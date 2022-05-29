@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 11:06:14 by zwong             #+#    #+#             */
-/*   Updated: 2022/05/29 11:07:04 by zwong            ###   ########.fr       */
+/*   Updated: 2022/05/29 11:56:04 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,15 @@ void	insert_field(char board[4][4][5], int index, char to_remove)
 {
 	int		row_i;
 	int		col_i;
+	char	str[2];
 	char	*field;
 
+	row_i = 0;
+	col_i = 0;
 	row_i = index / 4;
 	col_i = index % 4;
+	str[0] = to_remove;
+	str[1] = '\0';
 	field = &*board[row_i][col_i];
-	ft_strcpy(field, &to_remove);
+	ft_strcpy(board[row_i][col_i], str);
 }
