@@ -6,11 +6,11 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 14:51:40 by zwong             #+#    #+#             */
-/*   Updated: 2022/05/29 14:51:41 by zwong            ###   ########.fr       */
+/*   Updated: 2022/05/29 17:18:12 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	input_validation(int argc, char **argv)
+int	input_validation(int argc, char **argv, char *input_array)
 {
 	int		counter;
 	int		input_count;
@@ -25,6 +25,7 @@ int	input_validation(int argc, char **argv)
 		input_char = argv[1][counter];
 		if (input_char >= '0' && input_char <= '9')
 		{
+			input_array[input_count] = input_char;
 			input_count++;
 		}
 		else if (input_char != ' ')
@@ -33,5 +34,5 @@ int	input_validation(int argc, char **argv)
 		}
 		counter++;
 	}
-	return (input_count == 16);
+	return (input_count != 16);
 }
